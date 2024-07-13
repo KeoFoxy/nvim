@@ -1,4 +1,4 @@
-local SECRETS = require ("configs.wakatime")
+local SECRETS = require "configs.wakatime"
 
 return {
   {
@@ -228,6 +228,13 @@ return {
     config = function()
       vim.g.wakatime_PromptOnRegister = 0
       vim.g.wakatime_api_key = SECRETS.wakatime_api_key
+    end,
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
     end,
   },
 }
