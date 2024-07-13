@@ -8,7 +8,7 @@ local util = require "lspconfig/util"
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "gopls", "gradle_ls", "lua_ls" }
+local servers = { "html", "cssls", "tsserver", "clangd", "gopls", "gradle_ls", "lua_ls", "sourcekit" }
 
 local function organize_imports()
   local params = {
@@ -41,6 +41,7 @@ for _, lsp in ipairs(servers) do
   lspconfig.prismals.setup {}
 end
 
+-- rust config
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -53,4 +54,12 @@ lspconfig.rust_analyzer.setup {
       },
     },
   },
+}
+
+-- swift config
+lspconfig.sourcekit.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "swift" },
+  root_dir = util.root_pattern("Package.swift", "compile_commands.json", ".git"),
 }

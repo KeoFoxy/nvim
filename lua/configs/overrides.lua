@@ -14,6 +14,7 @@ M.treesitter = {
     "markdown_inline",
     "prisma",
     "go",
+    "swift"
   },
   indent = {
     enable = true,
