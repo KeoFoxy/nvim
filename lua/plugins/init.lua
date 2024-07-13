@@ -237,4 +237,11 @@ return {
       vim.g.rustfmt_autosave = 1
     end,
   },
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require "configs.lint"
+    end,
+  },
 }

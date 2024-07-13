@@ -10,10 +10,13 @@ end, { desc = "Close All Buffers" })
 
 map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find Todo" })
 map("n", "\\", "<cmd>:vsplit <CR>", { desc = "Vertical Split" })
-map("n", "<c-l>", "<cmd>:TmuxNavigateRight<cr>", { desc = "Tmux Right" })
-map("n", "<c-h>", "<cmd>:TmuxNavigateLeft<cr>", { desc = "Tmux Left" })
-map("n", "<c-k>", "<cmd>:TmuxNavigateUp<cr>", { desc = "Tmux Up" })
-map("n", "<c-j>", "<cmd>:TmuxNavigateDown<cr>", { desc = "Tmux Down" })
+map("n", "<C-sp>", "<cmd>:vertical resize +1<CR>", { desc = "Increase Vertical Split" })
+map("n", "<C-so>", "<cmd>:vertical resize -1<CR>", { desc = "Decrease Vertical Split" })
+
+map("n", "<leader>a", "<C-w>h", { desc = "Go to left window" })
+map("n", "<leader>d", "<C-w>l", { desc = "Go to right window" })
+map("n", "<leader>s", "<C-w>j", { desc = "Go to bottom window" })
+map("n", "<leader>w", "<C-w>k", { desc = "Go to top window" })
 
 -- Trouble
 
