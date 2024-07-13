@@ -1,3 +1,5 @@
+local SECRETS = require ("configs.wakatime")
+
 return {
   {
     "stevearc/conform.nvim",
@@ -43,6 +45,7 @@ return {
         "gopls",
         "js-debug-adapter",
         "typescript-language-server",
+        "rust-analyzer",
       },
     },
   },
@@ -59,6 +62,9 @@ return {
         "typescript",
         "javascript",
         "go",
+        "rust",
+        "c",
+        "cpp",
       },
     },
   },
@@ -214,5 +220,14 @@ return {
   {
     "Exafunction/codeium.vim",
     lazy = false,
+  },
+  {
+    "wakatime/vim-wakatime",
+    lazy = false,
+    enabled = true,
+    config = function()
+      vim.g.wakatime_PromptOnRegister = 0
+      vim.g.wakatime_api_key = SECRETS.wakatime_api_key
+    end,
   },
 }

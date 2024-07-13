@@ -3,10 +3,14 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    javascript = { "prettier" },
-    typescript = { "prettier" },
-    typescriptreact = { "prettier" },
-    javascriptreact = { "prettier" },
+    javascript = { "eslint" },
+    typescript = { "eslint" },
+    typescriptreact = { "eslint" },
+    javascriptreact = { "eslint" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
+    rust = { "rustfmt" },
+    swift = { "swiftformat" },
   },
 
   format_on_save = {

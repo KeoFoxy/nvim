@@ -34,6 +34,7 @@ M.mason = {
     "node-debug2-adapter",
     "gopls",
     "gradle_ls",
+    "rust-analyzer",
   },
 }
 
