@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = "everforest",
+  theme = "pastelbeans",
   transparency = true,
   statusline = {
     theme = "minimal",
