@@ -244,4 +244,12 @@ return {
       require "configs.lint"
     end,
   },
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    config = function()
+      require "configs.dashboard"
+    end,
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  },
 }

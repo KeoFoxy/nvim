@@ -10,8 +10,8 @@ end, { desc = "Close All Buffers" })
 
 map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find Todo" })
 map("n", "\\", "<cmd>:vsplit <CR>", { desc = "Vertical Split" })
-map("n", "<C-sp>", "<cmd>:vertical resize +1<CR>", { desc = "Increase Vertical Split" })
-map("n", "<C-so>", "<cmd>:vertical resize -1<CR>", { desc = "Decrease Vertical Split" })
+map("n", "<C-sp>", "<cmd>:vertical resize +1<CR>", { desc = "Vertical Split Increase" })
+map("n", "<C-so>", "<cmd>:vertical resize -1<CR>", { desc = "Vertical Split Decrease" })
 
 map("n", "<leader>a", "<C-w>h", { desc = "Go to left window" })
 map("n", "<leader>d", "<C-w>l", { desc = "Go to right window" })
