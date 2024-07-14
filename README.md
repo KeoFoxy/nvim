@@ -2,9 +2,9 @@
 
 ## Requirements
 
-**nvim - v0.10.0**
-**NvChad - v2.5**
-**Any Nerd font**
+**nvim - v0.10.0**   
+**NvChad - v2.5**   
+**Any Nerd font**   
 
 ## Preview
 <img src="./img/nvim1.png">
