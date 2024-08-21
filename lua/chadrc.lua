@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = "pastelbeans",
+  theme = "tundra",
   transparency = true,
   statusline = {
     theme = "minimal",
@@ -14,6 +14,17 @@ M.ui = {
 
   hl_override = {
     Comment = { italic = true },
+    Keyword = { italic = true },
+    Include = { italic = true },
+    Function = { italic = true },
+    Variable = { italic = true },
+    Type = { italic = true },
+    SpecialComment = { italic = true },
+    TSAttribute = { italic = true },
+    TSParameter = { italic = true },
+    TSLabel = { italic = true },
+    TSVariableBuiltin = { italic = true },
+    TSTagAttribute = { italic = true },
     ["@comment"] = { italic = true },
     DiffChange = {
       bg = "#464414",
