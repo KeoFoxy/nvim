@@ -87,7 +87,19 @@ return {
     "windwp/nvim-ts-autotag",
     event = "VeryLazy",
     config = function()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup {
+        opts = {
+          enable_close = true,
+          enable_rename = true,
+          enable_close_on_slash = true,
+        },
+        per_filetype = {
+          ["ts"] = {
+            enable_close = false,
+            enable_rename = false,
+          },
+        },
+      }
     end,
   },
   {
