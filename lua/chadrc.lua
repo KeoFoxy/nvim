@@ -1,15 +1,12 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
   theme = "tundra",
   transparency = true,
   statusline = {
     theme = "minimal",
     -- separator_style = "round",
-  },
-  nvdash = {
-    load_on_startup = false,
   },
 
   hl_override = {
@@ -37,6 +34,18 @@ M.ui = {
     DiffRemoved = {
       bg = "#461414",
       fg = "none",
+    },
+  },
+}
+
+M.ui = {
+  cmp = {
+    icons_left = false,
+    lspkind_text = true,
+    style = "default",
+    format_colors = {
+      tailwind = false,
+      icon = "󱓻",
     },
   },
 }

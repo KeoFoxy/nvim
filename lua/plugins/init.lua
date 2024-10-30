@@ -271,6 +271,10 @@ return {
     lazy = false,
   },
   {
+    "nvchad/minty",
+    cmd = { "Shades", "Huefy" },
+  },
+  {
     "nvchad/menu",
     lazy = false,
   },

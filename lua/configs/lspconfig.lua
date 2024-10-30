@@ -8,7 +8,7 @@ local util = require "lspconfig/util"
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "gopls", "gradle_ls", "lua_ls", "sourcekit" }
+local servers = { "html", "cssls", "ts_ls", "clangd", "gopls", "gradle_ls", "lua-language-server", "sourcekit" }
 
 local function organize_imports()
   local params = {
