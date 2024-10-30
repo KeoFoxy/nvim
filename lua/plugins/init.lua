@@ -231,10 +231,10 @@ return {
       require("todo-comments").setup()
     end,
   }, -- To make a plugin not be loaded
-  {
-    "Exafunction/codeium.vim",
-    lazy = false,
-  },
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   lazy = false,
+  -- },
   {
     "wakatime/vim-wakatime",
     lazy = false,
@@ -265,5 +265,13 @@ return {
       require "configs.dashboard"
     end,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  },
+  {
+    "nvchad/volt",
+    lazy = false,
+  },
+  {
+    "nvchad/menu",
+    lazy = false,
   },
 }
