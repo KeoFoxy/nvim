@@ -11,11 +11,12 @@ local options = {
     cpp = { "clang-format" },
     rust = { "rustfmt" },
     swift = { "swiftformat" },
+    go = { "gofumt", "goimports" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
+    timeout_ms = 3000,
     lsp_fallback = true,
   },
 }

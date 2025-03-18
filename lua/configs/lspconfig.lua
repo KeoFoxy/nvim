@@ -8,7 +8,7 @@ local util = require "lspconfig/util"
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "ts_ls", "clangd", "gopls", "gradle_ls", "lua-language-server", "sourcekit" }
+local servers = { "html", "cssls", "clangd", "gopls", "gradle_ls", "lua_ls" }
 
 local function organize_imports()
   local params = {
@@ -28,18 +28,63 @@ for _, lsp in ipairs(servers) do
         description = "Organize Imports",
       },
     },
-    settings = {
-      gopls = {
-        completeUnimported = true,
-        usePlaceholders = true,
-        analyses = {
-          unusedparams = true,
-        },
-      },
-    },
   }
   lspconfig.prismals.setup {}
 end
+
+-- Eslint
+lspconfig.eslint.setup {
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = true
+  end,
+  capabilities = capabilities,
+  settings = {
+    eslint = {
+      validate = "on",
+      packageManager = "npm",
+      codeAction = {
+        disableRuleComment = {
+          enable = true,
+          location = "separateLine"
+        },
+        showDocumentation = {
+          enable = true
+        }
+      }
+    }
+  },
+  root_dir = util.root_pattern(
+    ".eslintrc",
+    ".eslintrc.js",
+    ".eslintrc.cjs",
+    ".eslintrc.yaml",
+    ".eslintrc.yml",
+    ".eslintrc.json",
+    "package.json"
+  ),
+}
+
+-- JavaScript, TypeScript
+lspconfig.ts_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    preferences = {
+      provideRefactorNotApplicableReason = true,
+      allowIncompleteCompletions = true,
+      includeCompletionsForModuleExports = true
+    }
+  },
+  settings = {
+    typescript = {
+      suggest = {
+        completeFunctionCalls = true,
+        autoImports = true
+      }
+    }
+  }
+}
 
 -- rust config
 lspconfig.rust_analyzer.setup {
@@ -58,8 +103,15 @@ lspconfig.rust_analyzer.setup {
 
 -- swift config
 lspconfig.sourcekit.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+  cmd = { "sourcekit-lsp" },
   filetypes = { "swift" },
-  root_dir = util.root_pattern("Package.swift", "compile_commands.json", ".git"),
+  root_dir = util.root_pattern("Package.swift", ".git", "*.xcodeproj"),
+  settings = {
+    swift = {
+      code_action = {
+        enable = true,
+        appliesToWholeFile = true  -- Разрешаем code actions для всего файла
+      }
+    }
+  }
 }

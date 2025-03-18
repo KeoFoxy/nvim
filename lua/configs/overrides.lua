@@ -26,7 +26,7 @@ M.mason = {
     "lua-language-server",
     "css-lsp",
     "html-lsp",
-    "typescript-language-server",
+    "ts_ls",
     "deno",
     "prettier",
     "eslint_d",
@@ -36,6 +36,7 @@ M.mason = {
     "gopls",
     "gradle_ls",
     "rust-analyzer",
+    "sourcekit-lsp"
   },
 }
 
